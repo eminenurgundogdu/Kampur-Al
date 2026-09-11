@@ -1,8 +1,9 @@
 import os
 
+
 class Config:
     # API anahtarını kodun içine doğrudan yazmıyoruz
-    GROQ_API_KEY = os.getenv("GROQ_API_KEY")  # Vars
+    GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
     BUSINESS_CONTEXT = """
     Sen Kampur AI platformunun resmi akıllı asistanısın.
