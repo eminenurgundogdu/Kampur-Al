@@ -3,3 +3,5 @@ groq
 flask-cors
 gunicorn
 python-dotenv
+httpx
+certifi
