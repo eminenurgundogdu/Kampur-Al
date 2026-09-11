@@ -22,7 +22,6 @@ def get_ai_response(user_message):
             max_tokens=1024,
         )
         return completion.choices[0].message.content
-    except Exception as e:
-        except Exception as e:
-        print(f"HATA DETAYI: {e}")  # Render loglarına basması için
-        return f"Groq Hatası: {str(e)}"
+except Exception as e:
+    print(f"HATA DETAYI: {e}")
+    return f"Groq Hatası: {str(e)}"
