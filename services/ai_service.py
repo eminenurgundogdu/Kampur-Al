@@ -9,7 +9,6 @@ load_dotenv()
 # Groq istemcisini başlatıyoruz (API anahtarını Config sınıfı üzerinden .env'den alır)
 client = Groq(api_key=Config.GROQ_API_KEY)
 
-
 def get_ai_response(user_message):
     try:
         completion = client.chat.completions.create(
@@ -22,6 +21,6 @@ def get_ai_response(user_message):
             max_tokens=1024,
         )
         return completion.choices[0].message.content
-except Exception as e:
-    print(f"HATA DETAYI: {e}")
-    return f"Groq Hatası: {str(e)}"
+    except Exception as e:
+        print(f"HATA DETAYI: {e}")
+        return f"Groq Hatası: {str(e)}"
