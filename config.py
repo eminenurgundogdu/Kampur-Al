@@ -1,5 +1,7 @@
 import os
+from dotenv import load_dotenv
 
+load_dotenv()  # .env dosyasındaki ortam değişkenlerini yükler  
 
 class Config:
     # API anahtarını kodun içine doğrudan yazmıyoruz
