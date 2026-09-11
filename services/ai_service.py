@@ -12,7 +12,7 @@ client = Groq(api_key=Config.GROQ_API_KEY)
 def get_ai_response(user_message):
     try:
         completion = client.chat.completions.create(
-    model="llama-3.1-8b-instant",  # Güncellenen kısım
+    model="openai/gpt-oss-120b",  # Güncellenen kısım
     messages=[
         {"role": "system", "content": Config.BUSINESS_CONTEXT},
         {"role": "user", "content": user_message},
