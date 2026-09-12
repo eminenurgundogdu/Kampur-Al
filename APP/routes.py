@@ -19,7 +19,20 @@ def chat():
     
     response = get_ai_response(message)
     return jsonify({"response": response})
-
+    
+@main_bp.route('/leads', methods=['POST'])
+def yeni_lead():
+    veri = request.get_json() or {}
+    isim = veri.get('isim')
+    telefon = veri.get('telefon')
+    mesaj = veri.get('mesaj', '')
+    
+    if not isim or not telefon:
+        return jsonify({"basari": False, "hata": "İsim ve telefon zorunludur"}), 400
+    
+    # lead_ekle(isim, telefon, mesaj)  # Veritabanı veya servis kaydı
+    return jsonify({"basari": True, "mesaj": "Talebiniz başarıyla alındı"}), 201
+    
 # --- YÖNETİM PANELİ (DASHBOARD) ENDPOINT'LERİ ---
 @main_bp.route('/dashboard/stats', methods=['GET'])
 def get_dashboard_stats():
